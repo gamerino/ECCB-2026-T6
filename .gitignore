@@ -1,0 +1,16 @@
+# Google Drive shortcuts
+*.gdoc
+*.gslides
+*.gsheet
+
+# macOS
+.DS_Store
+
+# RStudio
+.Rhistory
+.RData
+.Rproj.user/
+
+# Python
+__pycache__/
+*.pyc
