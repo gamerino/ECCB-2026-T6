@@ -76,13 +76,13 @@ Files provenance and any processing done after downloading for the purposes of t
 
 ---
 
-## Tutorial slides
+## Tutorial slides
 
 Presentations for all the tutorial sessions are available in the [slides/](slides/) folder in both, PowerPoint and PDF formats.
 
 ---
 
-## Hands-on activities
+## Hands-on activities
 
 Each session includes one planned hands-on activity and solutions are available for all of them. For Session 1, the solution is included in the tutorial slides, while for Sessions 2, 3, 5 and 6, separate solution documents are available in the [hands-on-solutions/](hands-on-solutions/) folder.
 
