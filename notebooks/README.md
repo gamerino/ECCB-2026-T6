@@ -52,3 +52,44 @@ The notebooks require:
 - A Google account.
 - A modern web browser.
 - Internet access.
+
+## Downloading your saved files
+
+After completing the tutorial, the output files are written to the following folders in the Colab session:
+
+- **R notebook:** `/content/ECCB2026/data/outputs/R/`
+  - `hct116_active_promoters_R.bed`
+  - `session4.RData`
+- **Python notebook:** `/content/ECCB2026/outputs/Python/`
+  - `cres_in_query_regions_python.csv`
+  - `hct116_active_promoters_python.bed`
+
+To download the output files directly from Colab:
+
+1. Click the **Files** folder icon on the left side of the Colab window.
+2. Navigate to the appropriate output folder shown above.
+3. Right-click each file and select **Download**.
+
+To save the output files to Google Drive before downloading them:
+
+1. In Colab, click the **Mount Drive** button in the Files panel and follow the authorisation steps.
+2. Run the appropriate command in a new Colab code cell:
+
+   ```python
+   # Python notebook outputs
+   !cp -r /content/ECCB2026/outputs/Python "/content/drive/MyDrive/Colab Notebooks/"
+   ```
+
+   ```bash
+   # R notebook outputs
+   !cp -r /content/ECCB2026/data/outputs/R "/content/drive/MyDrive/Colab Notebooks/"
+   ```
+
+3. Open [Google Drive](https://drive.google.com/) and sign in with the Google account used for Colab.
+4. Open **My Drive → Colab Notebooks**, right-click the copied file or folder, and select **Download**. Google Drive downloads folders as ZIP files.
+
+The Colab notebook itself can also be downloaded from Google Drive:
+
+1. Open Google Drive and sign in with the Google account used for Colab.
+2. Locate the notebook, usually in **My Drive → Colab Notebooks**.
+3. Right-click the notebook and select **Download**.
