@@ -93,8 +93,8 @@ Each session includes one planned hands-on activity and solutions are available 
 
 The hands-on exercises for Session 4 are available as Google Colab notebooks.
 
-- R notebook [`notebooks/colab_regulatory_annotation_R.ipynb`](notebooks/colab_regulatory_annotation_R.ipynb)
-- Python notebook [`notebooks/colab_regulatory_annotation_python.ipynb`](notebooks/colab_regulatory_annotation_python.ipynb)
+- GRCh38 R notebook [`notebooks/colab_regulatory_annotation_GRCh38_R.ipynb`](notebooks/colab_regulatory_annotation_GRCh38_R.ipynb)
+- GRCh38 Python notebook [`notebooks/colab_regulatory_annotation_GRCh38_python.ipynb`](notebooks/colab_regulatory_annotation_GRCh38_python.ipynb)
 
 ---
 

@@ -8,14 +8,24 @@ Participants may choose either the **R** or **Python** workflow. Both notebooks 
 
 | Notebook | Description |
 |----------|-------------|
-| `colab_regulatory_annotation_R.ipynb` | Hands-on exercises implemented in **R**, using packages such as **rtracklayer**, **GenomicRanges**, and **dplyr**. |
-| `colab_regulatory_annotation_python.ipynb` | Hands-on exercises implemented in **Python**, using packages such as **pandas** and **PyRanges**. |
+| `colab_regulatory_annotation_GRCh38_R.ipynb` | GRCh38 hands-on exercises implemented in **R**, using packages such as **rtracklayer**, **GenomicRanges**, and **dplyr**. |
+| `colab_regulatory_annotation_GRCh38_python.ipynb` | GRCh38 hands-on exercises implemented in **Python**, using packages such as **pandas** and **PyRanges**. |
+| `colab_regulatory_annotation_GRCm39_R.ipynb` | GRCm39 hands-on exercises implemented in **R**, using packages such as **rtracklayer**, **GenomicRanges**, and **dplyr**. |
+| `colab_regulatory_annotation_GRCm39_python.ipynb` | GRCm39 hands-on exercises implemented in **Python**, using packages such as **pandas** and **PyRanges**. |
 
 ### Downloading the notebooks
 
-[![R notebook - download](https://img.shields.io/badge/R%20notebook-download-blue?logo=r)](https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6/-/raw/main/notebooks/colab_regulatory_annotation_R.ipynb)
+#### GRCh38
 
-[![Python notebook - download](https://img.shields.io/badge/Python%20notebook-download-blue?logo=python)](https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6/-/raw/main/notebooks/colab_regulatory_annotation_python.ipynb)
+[![R notebook - download](https://img.shields.io/badge/R%20notebook-download-blue?logo=r)](https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6/-/raw/main/notebooks/colab_regulatory_annotation_GRCh38_R.ipynb)
+
+[![Python notebook - download](https://img.shields.io/badge/Python%20notebook-download-blue?logo=python)](https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6/-/raw/main/notebooks/colab_regulatory_annotation_GRCh38_python.ipynb)
+
+#### GRCm39
+
+[![R notebook - download](https://img.shields.io/badge/R%20notebook-download-blue?logo=r)](https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6/-/raw/main/notebooks/colab_regulatory_annotation_GRCm39_R.ipynb)
+
+[![Python notebook - download](https://img.shields.io/badge/Python%20notebook-download-blue?logo=python)](https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6/-/raw/main/notebooks/colab_regulatory_annotation_GRCm39_python.ipynb)
 
 ## Running the notebooks
 
@@ -58,11 +68,17 @@ The notebooks require:
 After completing the tutorial, the output files are written to the following folders in the Colab session:
 
 - **R notebook:** `/content/ECCB2026/data/outputs/R/`
-  - `hct116_active_promoters_R.bed`
-  - `session4.RData`
+  - GRCh38: 
+    - `GRCh38_hct116_active_promoters_R.bed`
+    - `session4_GRCh38.RData`
+  - GRCm39: 
+    - `GRCm39_forebrain_E13.5_active_promoters_R.bed`
+    - `session4_GRCm39.RData`  
 - **Python notebook:** `/content/ECCB2026/outputs/Python/`
-  - `cres_in_query_regions_python.csv`
-  - `hct116_active_promoters_python.bed`
+  - GRCh38:
+    - `GRCh38_hct116_active_promoters_python.bed`
+  - GRCm39:
+    - `GRCm39_forebrain_E13.5_active_promoters_python.bed`
 
 To download the output files directly from Colab:
 
