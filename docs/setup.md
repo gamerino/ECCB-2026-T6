@@ -11,12 +11,12 @@ Please complete the setup **before the workshop** to ensure you can participate 
 Clone the repository using Git:
 
 ```bash
-git clone https://gitlab.ebi.ac.uk/<group>/<repository>.git
+https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6.git
 ```
 
 Alternatively, you can download the repository as a ZIP archive:
 
-1. Open the project page.
+1. Open the [project page](https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6).
 2. Select **Code** → **Download source code**.
 3. Extract the archive to a convenient location.
 
@@ -41,7 +41,9 @@ ECCB-2026-T6/
 
 Some annotation files are distributed in **gzip-compressed** (`.gz`) format to reduce the repository size.
 
-Before starting the hands-on exercises, uncompress the following files:
+If you are running the analyses locally, uncompress the annotation files before
+starting the hands-on exercises. The compressed files are located in several
+subdirectories under `data/cres_annotation/`:
 
 ```text
 data/
@@ -49,35 +51,46 @@ data/
     ├── ENCODE/
     │   ├── GRCh38-cCRE-colors18062026.bed.gz
     │   ├── GRCm39-cCRE-colors18062026.bed.gz
+    │   ├── HCT116-cCRE.chr8.bed.gz
     │   └── mm10-cCRE-colors18062026.bed.gz
-    │
-    └── Ensembl_Regulation/
-        ├── Homo_sapiens.GRCh38.regulatory_features.v116.gff3.gz
-        └── Mus_musculus.GRCm39.regulatory_features.v116.gff3.gz
+    ├── Ensembl_Regulation/
+    │   ├── Homo_sapiens.GRCh38.regulatory_features.v116.gff3.gz
+    │   └── Mus_musculus.GRCm39.regulatory_features.v116.gff3.gz
+    ├── Fantom5/
+    │   └── F5.hg38.enhancers.bed.gz
+    └── RefSeq/
+        └── GCF_000001405.40_GRCh38.p14_genomic.RefSeqFE.gff.gz
 ```
 
-The remaining files (e.g. `.bed`, `.bb`, `.bw` and `.idx`) do **not** require decompression.
+The `.gz` files under `data/evidence/` are evidence tracks that will be decompressed on the Google Colab sessions and
+are not part of this annotation decompression step. If you want to load these files on IGV it is recommended to use their bigBed version also present in the same folders. 
 
 You may extract these files in one of two ways:
 
-### Option 1 — Graphical interface (recommended)
+### Option 1 — Graphical interface
 
-Navigate to the corresponding directory and extract each `.gz` file using your operating system's file manager (for example, by double-clicking the file or selecting **Extract** from the context menu).
+Navigate to the corresponding directories and extract each `.gz` file using
+your operating system's file manager (for example, by double-clicking the file
+or selecting **Extract** from the context menu).
 
-### Option 2 — Terminal (Linux/macOS)
+### Option 2 — Terminal (Linux/macOS, recommended)
 
-From the root directory of the repository, run:
+From the root directory of the repository, run the following command to
+uncompress all annotation files while keeping the original `.gz` files:
 
 ```bash
-gzip -d data/cres_annotation/ENCODE/*.bed.gz
-gzip -d data/cres_annotation/Ensembl_Regulation/*.gff3.gz
+find data/cres_annotation -type f -name '*.gz' -print0 |
+while IFS= read -r -d '' file; do
+    gzip -dc "$file" > "${file%.gz}"
+done
 ```
 
-If you want, you can also add the `-k` option to keep the original compressed files while creating the uncompressed versions.
+After extraction, the corresponding uncompressed annotation files should be
+present alongside the original `.gz` files.
 
-After extraction, the corresponding `.bed` and `.gff3` files should be present \(alongside the original `.gz` files if `-k` was used).
-
-These uncompressed files will be used during the R and Python hands-on exercises.
+If you are using the Google Colab notebooks, no manual decompression is
+required. The notebooks download and uncompress the required input files
+automatically in the Colab session.
 
 ---
 
@@ -95,7 +108,7 @@ Follow the instructions in the [genome-browsers](genome-browsers.md) document to
 
 # 5. Google Colab
 
-The tutorial provides Google Colab notebooks for the Python and R exercises. To runt them you need to have a Google account.
+The tutorial provides Google Colab notebooks for the Python and R exercises. To run them you need to have a Google account.
 
 No local Python/R installation is required if you choose to use Google Colab.
 

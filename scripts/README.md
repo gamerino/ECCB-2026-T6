@@ -13,8 +13,9 @@ These scripts are provided to ensure **reproducibility** of the tutorial materia
 
 | Script | Description |
 |---------|-------------|
-| `preprocessing/bash/liftover_mm10_to_GRCm39.sh` | Downloads the ENCODE cCREs for mm10, the UCSC **liftOver** tool and the **mm10ToMm39** chain file, then converts the ENCODE mouse cCRE annotations from the mm10 assembly to GRCm39. |
+| `preprocessing/bash/liftover_mm10_to_GRCm39.sh` | Downloads the ENCODE cCREs for mm10, the UCSC **liftOver** tool and the **mm10ToGRCm39** chain file, then converts the ENCODE mouse cCRE annotations from the mm10 assembly to GRCm39. |
 | `preprocessing/bash/bigBed_to_bed_EnsReg_evidence_files.sh` | Downloads the UCSC **bigBedToBed** utility and converts every `.bb` file below the current directory into a `.bed` file alongside it. |
+| `preprocessing/bash/extract_RefSeqFE_annotations.sh` | Extracts `RefSeqFE` annotations from the RefSeq GRCh38 GFF file, replaces RefSeq accession chromosome names with chromosome names, removes `biological_region` features, and writes a gzip-compressed GFF file. |
 
 ### R
 
@@ -31,6 +32,7 @@ The preprocessing scripts perform two main tasks:
 1. Convert the ENCODE mouse cCRE annotations from **mm10** to **GRCm39** using UCSC **liftOver**.
 2. Convert ENCODE cCRE BED files into **BED9** format by assigning colours to each cCRE class according to the ENCODE visualisation scheme.
 3. Convert Ensembl BigBed files to BED files. Mainly for open chromatin files that will be used in the hands-on activity of Session 4. 
+4. Extract and prepare RefSeqFE annotations for use as regulatory annotation tracks.
 
 The resulting CREs files are suitable for visualisation in genome browsers such as **IGV** and the **UCSC Genome Browser**, making easier to distinguish between CRE types during the hands-on exercises.
 
@@ -72,6 +74,29 @@ The command creates a `.bed` file next to each `.bb` file, including files in
 the HCT116 and `forebrain-E13.5` subdirectories. The downloaded `bigBedToBed`
 utility is removed when the conversion finishes. This repository contains the BED version of open chromatin files only which are the ones used in the Session 4 hands-on.
 
+### Extract RefSeqFE annotations
+
+From the repository root:
+
+```bash
+bash scripts/preprocessing/bash/extract_RefSeqFE_annotations.sh
+```
+
+The script reads:
+
+```text
+data/cres_annotation/RefSeq/GCF_000001405.40_GRCh38.p14_genomic.gff
+```
+
+It uses the `RefSeq` `region` rows to replace accession sequence names such as
+`NC_000001.11` with chromosome names such as `1`, retains rows whose source
+column is `RefSeqFE`, and removes rows whose feature type is
+`biological_region`. The output is written to:
+
+```text
+data/cres_annotation/RefSeq/GCF_000001405.40_GRCh38.p14_genomic.RefSeqFE.gff.gz
+```
+
 ### Create coloured ENCODE cCRE BED9 files
 
 Run the relevant R script from the directory containing its input BED file:
@@ -109,6 +134,8 @@ The colours follow the ENCODE cCRE visualisation conventions used by the SCREEN 
 ### Bash
 
 - `wget`
+- `awk`
+- `gzip`
 - UCSC `liftOver` (downloaded automatically by `liftover_mm10_to_GRCm39.sh`)
 - UCSC `bigBedToBed` (downloaded automatically by `bigBed_to_bed_EnsReg_evidence_files.sh`)
 
