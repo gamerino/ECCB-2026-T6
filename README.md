@@ -32,7 +32,7 @@ By the end of this tutorial participants will be able to:
 ```
 ├── data/                      Tutorial datasets
 ├── docs/                      Installation guides and additional documentation
-├── hands-on-solutions/        Presentations with hands-on excercises solutions
+├── hands-on-solutions/        Presentations with hands-on exercises solutions
 ├── notebooks/                 Google Colab notebooks
 ├── scripts/                   R, Python and shell scripts
 ├── slides/                    Presentation slides
@@ -116,7 +116,7 @@ If you identify an issue or would like to propose an enhancement, please open an
 
 ## Citation
 
-If you use these materials in teaching or training, please cite this repository and acknowledge the ECCB 2026 Tutorial.
+If you use these materials in teaching or training, please cite this repository [https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6](https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6) and acknowledge the ECCB 2026 Tutorial.
 
 ---
 

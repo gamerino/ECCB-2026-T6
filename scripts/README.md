@@ -149,12 +149,13 @@ The colours follow the ENCODE cCRE visualisation conventions used by the SCREEN 
 
 ## Input
 
-The scripts expect the following ENCODE cCRE annotation files:
+The scripts expect the following cCRE annotation files:
 
-| File | Source |
+| File | Source | Download link used for the Tutorial |
 |------|--------|
-| `GRCh38-cCREs.bed` | https://downloads.wenglab.org/Registry-V4/GRCh38-cCREs.bed |
-| `mm10-cCREs.bed` | https://downloads.wenglab.org/Registry-V4/mm10-cCREs.bed |
+| `GRCh38-cCREs.bed` | ENCODE | https://downloads.wenglab.org/Registry-V4/GRCh38-cCREs.bed |
+| `mm10-cCREs.bed` | ENCODE | https://downloads.wenglab.org/Registry-V4/mm10-cCREs.bed |
+| `GCF_000001405.40_GRCh38.p14_genomic.gff` | RefSeq | https://ftp.ncbi.nlm.nih.gov/genomes/refseq/vertebrate_mammalian/Homo_sapiens/latest_assembly_versions/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.gff.gz |
 
 The `liftover_mm10_to_GRCm39.sh` script generates:
 
