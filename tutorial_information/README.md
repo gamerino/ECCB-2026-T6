@@ -13,13 +13,13 @@ The tutorial combines conceptual lectures, guided exploration of community resou
 | Session | Topic | Practical activities |
 |----------|-------|----------------------|
 | **Welcome** | Introduction and setup | Repository overview, datasets, software installation and environment check |
-| **Session 1** | Regulatory Genomics and Epigenomic Evidence | Define cREs and understand how can they be inferred from epigenomic data |
+| **Session 1** | Regulatory Genomics and Epigenomic Evidence | Define cREs and understand how they can be inferred from epigenomic data |
 | **Session 2** | ENCODE: Experimental Data, cCREs and SCREEN | Navigate the ENCODE Data Portal and SCREEN to investigate candidate cis-regulatory elements |
 | **Session 3** | Ensembl Regulation: Regulatory Builds and Evidence | Explore Ensembl Regulatory Features, supporting evidence and activity across epigenomes |
 | **Session 4** | Alternative Access to Regulatory Annotation | Access, parse and analyse regulatory annotations using reproducible R or Python workflows |
 | **Session 5** | Visualisation with Genome Browsers | Integrate regulatory annotations and epigenomic evidence using IGV |
 | **Session 6** | Integrative Case Study | Combine browser exploration, annotation analysis and genome visualisation to interpret a non-coding variant |
-| **Wrap-up** | Discussion and key take-home messages | Summary, Q&A and additional resources | :contentReference[oaicite:1]{index=1}
+| **Wrap-up** | Discussion and key take-home messages | Summary, Q&A and additional resources |
 
 ---
 
@@ -37,4 +37,4 @@ The tutorial follows a progressive workflow in which participants:
 
 ## Detailed Programme
 
-The complete timetable, learning objectives, hands-on exercises, and expected outcomes for each session are available in the [ECCB-2026_T6_detailed_program](ECCB-2026_T6_detailed_program.pdf) document.
+The complete timetable, learning objectives, hands-on exercises, and expected outcomes for each session are available in the [ECCB-2026_T6_detailed_program.pdf](ECCB-2026_T6_detailed_program.pdf) document.

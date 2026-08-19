@@ -11,7 +11,7 @@ Please complete the setup **before the workshop** to ensure you can participate 
 Clone the repository using Git:
 
 ```bash
-https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6.git
+git clone https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6.git
 ```
 
 Alternatively, you can download the repository as a ZIP archive:
@@ -62,8 +62,7 @@ data/
         └── GCF_000001405.40_GRCh38.p14_genomic.RefSeqFE.gff.gz
 ```
 
-The `.gz` files under `data/evidence/` are evidence tracks that will be decompressed on the Google Colab sessions and
-are not part of this annotation decompression step. If you want to load these files on IGV it is recommended to use their bigBed version also present in the same folders. 
+The `.gz` files under `data/evidence/` are evidence tracks that are decompressed automatically during the Google Colab sessions. They are not part of this annotation decompression step. For IGV, use the corresponding BigBed version also present in the same folders.
 
 You may extract these files in one of two ways:
 
@@ -102,7 +101,7 @@ Although any modern web browser should work, **Google Chrome** is recommended fo
 
 # 4. Install IGV
 
-Follow the instructions in the [genome-browsers](genome-browsers.md) document to download IGV or to know how to access to its web version.
+Follow the instructions in the [genome-browsers](genome-browsers.md) document to download IGV or to learn how to access its web version.
 
 ---
 
@@ -123,7 +122,7 @@ Before the tutorial, please verify that:
 - [ ] The repository has been downloaded or cloned.
 - [ ] The tutorial datasets are available.
 - [ ] IGV opens successfully.
-- [ ] Google Colab notebooks can be opened.
+- [ ] Google Colab notebooks are downloaded to the cloned repository folder and can be uploaded to Colab.
 
 ---
 

@@ -1,6 +1,6 @@
 # Google Colab Notebooks
 
-This directory contains the Google Colab notebooks used during the Session 4 hands-on exercises of the tutorial.
+This directory contains the Google Colab notebooks used during the hands-on exercises in Session 4.
 
 Participants may choose either the **R** or **Python** workflow. Both notebooks cover the same practical exercises and learning objectives, differing only in the programming language and associated libraries.
 
@@ -29,7 +29,7 @@ Participants may choose either the **R** or **Python** workflow. Both notebooks 
 
 ## Running the notebooks
 
-The notebooks are designed to run directly in **Google Colab** so you need to have a Google account for using them.
+The notebooks are designed to run directly in **Google Colab** so you need a Google account to use them.
 
 ### Uploading a notebook to Colab
 
@@ -41,7 +41,7 @@ The notebooks are designed to run directly in **Google Colab** so you need to ha
 
 Alternatively, open the [notebooks folder in GitLab](https://gitlab.ebi.ac.uk/ensembl-regulation/ECCB-2026-T6/-/tree/main/notebooks), select a notebook, download it, and upload it to Colab.
 
-The required datasets are automatically downloaded on your Google Drive during execution. No local installation of R or Python is required.
+The required datasets are automatically downloaded to the Colab session during execution. No local installation of R or Python is required.
 
 ## During the tutorial
 

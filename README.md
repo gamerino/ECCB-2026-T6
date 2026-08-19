@@ -9,7 +9,7 @@ This repository contains all the material required for the tutorial, including l
 
 ## Overview
 
-*Cis-regulatory elements* (CREs) such as promoters and enhancers play a central role in gene regulation. Large-scale efforts such as [ENCODE](https://www.encodeproject.org/) and [FAANG](https://data.faang.org/home) have generated extensive collections of epigenomic data that are freely accessible to the community. CREs catalogues like [Ensembl Regulation](https://regulation.ensembl.org/) and [ENCODE cCREs](https://screen.wenglab.org/) provides standardized annotation supported by these epigenomic data. While these resources are publicly available, selecting, interpreting and integrating them into genomic analyses remains challenging.
+*Cis-regulatory elements* (CREs) such as promoters and enhancers play a central role in gene regulation. Large-scale efforts such as [ENCODE](https://www.encodeproject.org/) and [FAANG](https://data.faang.org/home) have generated extensive collections of epigenomic data that are freely accessible to the community. CREs catalogues like [Ensembl Regulation](https://regulation.ensembl.org/) and [ENCODE cCREs](https://screen.wenglab.org/) provide standardized annotation supported by these epigenomic data. While these resources are publicly available, selecting, interpreting and integrating them into genomic analyses remains challenging.
 
 This tutorial provides a practical introduction to the exploration, interpretation and analysis of regulatory annotations using community resources and reproducible workflows in **R** and **Python**.
 
@@ -17,7 +17,7 @@ This tutorial provides a practical introduction to the exploration, interpretati
 
 ## Learning objectives
 
-By the end of this tutorial participants will be able to:
+By the end of this tutorial, participants will be able to:
 
 - Understand how regulatory annotations are inferred from epigenomic evidence.
 - Explore regulatory annotations using [Ensembl Regulation](https://regulation.ensembl.org/) and [ENCODE SCREEN](https://screen.wenglab.org/).
@@ -32,7 +32,7 @@ By the end of this tutorial participants will be able to:
 ```
 ├── data/                      Tutorial datasets
 ├── docs/                      Installation guides and additional documentation
-├── hands-on-solutions/        Presentations with hands-on exercises solutions
+├── hands-on-solutions/        Presentations and solutions to the hands-on exercises
 ├── notebooks/                 Google Colab notebooks
 ├── scripts/                   R, Python and shell scripts
 ├── slides/                    Presentation slides
@@ -72,19 +72,19 @@ Detailed instructions are available in the [`docs/`](docs/) directory.
 
 The repository contains the annotation and example datasets required for the exercises.
 
-Files provenance and any processing done after downloading for the purposes of the tutorial are documented in the [data/files_provenance_ECCB-2026-T6](data/files_provenance_ECCB-2026-T6.xlsx) file. Files processing steps are detailed in [scripts/README.md](scripts/README.md).
+File provenance and any processing done after downloading for the purposes of the tutorial are documented in the [data/files_provenance_ECCB-2026-T6](data/files_provenance_ECCB-2026-T6.xlsx) file. File-processing steps are detailed in [scripts/README.md](scripts/README.md).
 
 ---
 
 ## Tutorial slides
 
-Presentations for all the tutorial sessions are available in the [slides/](slides/) folder in both, PowerPoint and PDF formats.
+Presentations for all the tutorial sessions are available in the [slides/](slides/) folder in both PowerPoint and PDF formats.
 
 ---
 
 ## Hands-on activities
 
-Each session includes one planned hands-on activity and solutions are available for all of them. For Session 1, the solution is included in the tutorial slides, while for Sessions 2, 3, 5 and 6, separate solution documents are available in the [hands-on-solutions/](hands-on-solutions/) folder.
+Each session includes a planned hands-on activity. Solutions are available for all of sessions. For Session 1, the solution is included in the tutorial slides, while for Sessions 2, 3, 5 and 6, separate solution documents are available in the [hands-on-solutions/](hands-on-solutions/) folder.
 
 ---
 
