@@ -38,15 +38,15 @@ The resulting CREs files are suitable for visualisation in genome browsers such 
 
 ## Running the scripts
 
-The scripts use relative input and output paths. Run them from the directory that contains the relevant input files, rather than from the repository root.
+The scripts resolve input and output paths relative to the repository location.
+They can be run from the repository root or from another working directory.
 
 ### Convert mm10 cCREs to GRCm39
 
-From the repository root:
+From the repository root, run:
 
 ```bash
-cd data/cres_annotation/ENCODE
-bash ../../../scripts/preprocessing/bash/liftover_mm10_to_GRCm39.sh
+bash scripts/preprocessing/bash/liftover_mm10_to_GRCm39.sh
 ```
 
 This creates the intermediate files `mm10-cCREs_LOGRCm39.bed` and
@@ -54,7 +54,7 @@ This creates the intermediate files `mm10-cCREs_LOGRCm39.bed` and
 then be created with:
 
 ```bash
-Rscript ../../../scripts/preprocessing/R/GRCm39-cCREs-coloring.R
+Rscript scripts/preprocessing/R/GRCm39-cCREs-coloring.R
 ```
 
 The liftover script downloads `mm10-cCREs.bed`, `liftOver`, and
@@ -63,11 +63,10 @@ directory.
 
 ### Convert Ensembl Regulation BigBed files to BED
 
-From the repository root:
+From the repository root, run:
 
 ```bash
-cd data/evidence/Ensembl_Regulation
-bash ../../../scripts/preprocessing/bash/bigBed_to_bed_EnsReg_evidence_files.sh
+bash scripts/preprocessing/bash/bigBed_to_bed_EnsReg_evidence_files.sh
 ```
 
 The command creates a `.bed` file next to each `.bb` file, including files in
@@ -99,13 +98,12 @@ data/cres_annotation/RefSeq/GCF_000001405.40_GRCh38.p14_genomic.RefSeqFE.gff.gz
 
 ### Create coloured ENCODE cCRE BED9 files
 
-Run the relevant R script from the directory containing its input BED file:
+From the repository root, run the relevant R script:
 
 ```bash
-cd data/cres_annotation/ENCODE
-Rscript ../../../scripts/preprocessing/R/GRCh38-cCREs-coloring.R
-Rscript ../../../scripts/preprocessing/R/mm10-cCREs-coloring.R
-Rscript ../../../scripts/preprocessing/R/GRCm39-cCREs-coloring.R
+Rscript scripts/preprocessing/R/GRCh38-cCREs-coloring.R
+Rscript scripts/preprocessing/R/mm10-cCREs-coloring.R
+Rscript scripts/preprocessing/R/GRCm39-cCREs-coloring.R
 ```
 
 The GRCh38 and mm10 scripts expect the original `GRCh38-cCREs.bed` and

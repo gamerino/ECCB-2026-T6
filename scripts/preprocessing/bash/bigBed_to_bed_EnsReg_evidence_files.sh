@@ -2,15 +2,22 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../../.." && pwd)"
+EVIDENCE_DIR="${REPO_ROOT}/data/evidence/Ensembl_Regulation"
+BIGBED_TO_BED="${SCRIPT_DIR}/bigBedToBed"
+
 #########################################
 # Download bigBedToBed if necessary
 #########################################
 
-echo "Downloading UCSC bigBedToBed..."
- wget \
-    https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bigBedToBed \
-    -O bigBedToBed
-chmod +x bigBedToBed
+if [[ ! -x "${BIGBED_TO_BED}" ]]; then
+    echo "Downloading UCSC bigBedToBed..."
+    wget \
+        https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bigBedToBed \
+        -O "${BIGBED_TO_BED}"
+    chmod +x "${BIGBED_TO_BED}"
+fi
 
 #########################################
 # Convert all BigBed files
@@ -18,7 +25,7 @@ chmod +x bigBedToBed
 
 echo "Converting BigBed files..."
 
-find . -type f -name "*.bb" | while read -r bb
+find "${EVIDENCE_DIR}" -type f -name "*.bb" -print0 | while IFS= read -r -d '' bb
 do
 
     bed="${bb%.bb}.bed"
@@ -26,7 +33,7 @@ do
     echo "  ${bb}"
     echo "      -> ${bed}"
 
-    ./bigBedToBed "${bb}" "${bed}"
+    "${BIGBED_TO_BED}" "${bb}" "${bed}"
 
 done
 
@@ -40,6 +47,6 @@ echo "Finished."
 echo
 echo "Generated BED files:"
 
-find . -type f -name "*.bed"
+find "${EVIDENCE_DIR}" -type f -name "*.bed"
 
-rm bigBedToBed
+rm -f "${BIGBED_TO_BED}"

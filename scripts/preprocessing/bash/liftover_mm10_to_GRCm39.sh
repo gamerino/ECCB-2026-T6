@@ -2,18 +2,23 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../../.." && pwd)"
+ENCODE_DIR="${REPO_ROOT}/data/cres_annotation/ENCODE"
+
 #########################################
 # Configuration
 #########################################
 
-INPUT="mm10-cCREs.bed"
-OUTPUT="mm10-cCREs_LOGRCm39.bed"
-UNMAPPED="mm10-cCREs.unmapped.bed"
+INPUT="${ENCODE_DIR}/mm10-cCREs.bed"
+OUTPUT="${ENCODE_DIR}/mm10-cCREs_LOGRCm39.bed"
+UNMAPPED="${ENCODE_DIR}/mm10-cCREs.unmapped.bed"
 
 CHAIN="mm10ToMm39.over.chain.gz"
 CHAIN_URL="https://hgdownload.soe.ucsc.edu/goldenPath/mm10/liftOver/${CHAIN}"
+CHAIN_PATH="${ENCODE_DIR}/${CHAIN}"
 
-LIFTOVER="./liftOver"
+LIFTOVER="${SCRIPT_DIR}/liftOver"
 
 #########################################
 # Download mm10 cCREs if necessary
@@ -23,7 +28,8 @@ if [ ! -f "${INPUT}" ]; then
     echo "Downloading mm10 cCREs..."
 
     wget \
-      https://downloads.wenglab.org/Registry-V4/${INPUT} \
+      "https://downloads.wenglab.org/Registry-V4/mm10-cCREs.bed" \
+      -O "${INPUT}"
 
 fi
 
@@ -43,10 +49,10 @@ fi
 # Download chain file
 #########################################
 
-if [ ! -f "${CHAIN}" ]; then
+if [ ! -f "${CHAIN_PATH}" ]; then
     echo "Downloading chain file..."
 
-    wget "${CHAIN_URL}" 
+    wget "${CHAIN_URL}" -O "${CHAIN_PATH}"
 
 fi
 
@@ -60,7 +66,7 @@ echo "Running liftOver..."
     -bedPlus=3 \
     -tab \
     "${INPUT}" \
-    "${CHAIN}" \
+    "${CHAIN_PATH}" \
     "${OUTPUT}" \
     "${UNMAPPED}"
 

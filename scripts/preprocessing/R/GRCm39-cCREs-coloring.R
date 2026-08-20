@@ -1,10 +1,25 @@
 library(dplyr)
 
-#setwd('/path/to/cres/folder')
+script_file <- sub(
+  "^--file=",
+  "",
+  commandArgs(trailingOnly = FALSE)[
+    grepl("^--file=", commandArgs(trailingOnly = FALSE))
+  ][1]
+)
+script_dir <- dirname(normalizePath(script_file))
+repo_root <- normalizePath(file.path(script_dir, "../../.."))
+encode_dir <- file.path(repo_root, "data", "cres_annotation", "ENCODE")
+input_file <- file.path(encode_dir, "mm10-cCREs_LOGRCm39.bed")
+output_file <- file.path(encode_dir, "GRCm39-cCRE-colors18062026.bed")
 
 # GRCm39 cCREs
 
-GRCm39_cCREs <- read.delim('mm10-cCREs_LOGRCm39.bed', header = F)
+if (!file.exists(input_file)) {
+  stop("Input file not found: ", input_file)
+}
+
+GRCm39_cCREs <- read.delim(input_file, header = FALSE)
 head(GRCm39_cCREs)
 
 names(GRCm39_cCREs) <- c('chr', 'start', 'end', 'oldName', 'name', 'type')
@@ -32,8 +47,8 @@ GRCm39_cCREs %>%
   select(chr, start, end, name, score, strand, thickStart, thickEnd,
          color, type) -> GRCm39_cCREs
 
-write.table(GRCm39_cCREs, file = 'GRCm39-cCRE-colors18062026.bed',
-            row.names = F, col.names = F, quote = F, sep = "\t")
+write.table(GRCm39_cCREs, file = output_file,
+            row.names = FALSE, col.names = FALSE, quote = FALSE, sep = "\t")
 
 
 

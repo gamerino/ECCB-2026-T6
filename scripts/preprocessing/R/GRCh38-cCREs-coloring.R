@@ -1,10 +1,25 @@
 library(dplyr)
 
-#setwd('/path/to/cres/folder')
+script_file <- sub(
+  "^--file=",
+  "",
+  commandArgs(trailingOnly = FALSE)[
+    grepl("^--file=", commandArgs(trailingOnly = FALSE))
+  ][1]
+)
+script_dir <- dirname(normalizePath(script_file))
+repo_root <- normalizePath(file.path(script_dir, "../../.."))
+encode_dir <- file.path(repo_root, "data", "cres_annotation", "ENCODE")
+input_file <- file.path(encode_dir, "GRCh38-cCREs.bed")
+output_file <- file.path(encode_dir, "GRCh38-cCRE-colors18062026.bed")
 
 # GRCh38 cCREs
 
-GRCh38_cCREs <- read.delim('GRCh38-cCREs.bed', header = F)
+if (!file.exists(input_file)) {
+  stop("Input file not found: ", input_file)
+}
+
+GRCh38_cCREs <- read.delim(input_file, header = FALSE)
 head(GRCh38_cCREs)
 
 names(GRCh38_cCREs) <- c('chr', 'start', 'end', 'oldName', 'name', 'type')
@@ -32,8 +47,8 @@ GRCh38_cCREs %>%
   select(chr, start, end, name, score, strand, thickStart, thickEnd,
          color, type) -> GRCh38_cCREs
 
-write.table(GRCh38_cCREs, file = 'GRCh38-cCRE-colors18062026.bed',
-            row.names = F, col.names = F, quote = F, sep = '\t')
+write.table(GRCh38_cCREs, file = output_file,
+            row.names = FALSE, col.names = FALSE, quote = FALSE, sep = '\t')
 
 
 
