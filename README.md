@@ -86,6 +86,8 @@ Presentations for all the tutorial sessions are available in the [slides/](slide
 
 Each session includes a planned hands-on activity. Solutions are available for all of sessions. For Session 1, the solution is included in the tutorial slides, while for Sessions 2, 3, 5 and 6, separate solution documents are available in the [hands-on-solutions/](hands-on-solutions/) folder.
 
+[Link to the Google Slides doc for Session 6](https://docs.google.com/presentation/d/1k5Y0hoRT-XHgXk3MEpaUjQ3SbjUD2LBFCRLi3tlG9Lg/edit?slide=id.g3f9fb0a0e96_1_0#slide=id.g3f9fb0a0e96_1_0)
+
 ---
 
 
